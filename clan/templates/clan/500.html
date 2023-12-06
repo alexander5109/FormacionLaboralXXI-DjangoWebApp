@@ -1,0 +1,23 @@
+{% extends "clan\t1_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %} CLAN: PageNotFound {% endblock %}
+{% block header1 %} Error en el server {% endblock %}
+{% block header2 %} Error 500 {% endblock %}
+{% block headerimage1 %} "{% static 'clan/assets/img/404_2.jpg' %}" {% endblock %}
+
+
+
+
+{% block header3 %} Seguramente me equivoque yo, pero... {% endblock %}
+{% block header4 %} Esta página no funciona. {% endblock %}
+{% block parrafo1 %} La pagina solicitada no esta correctamente definida en el servidor.  {% endblock %}
+
+
+{% block visitbutton1 %}  {% endblock %}
+{% block header3_b %} A ver el error... {% endblock %}
+{% block header4_b %} Este es el error: {% endblock %}
+{% block parrafo1_b %} {{errors}} {% endblock %}

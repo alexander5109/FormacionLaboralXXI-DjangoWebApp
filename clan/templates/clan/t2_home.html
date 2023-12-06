@@ -1,0 +1,27 @@
+{% extends "clan/t0.html" %}
+{% load static %}
+
+
+{% block title %} CLAN: Home {% endblock %}
+{% block header1 %} Pagina Principal {% endblock %}
+{% block header2 %} Bienvenido {% endblock %}
+
+
+
+{% block content %} 
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% block headerimage1 %} "{% static 'clan/assets/img/intro.jpg' %}" {% endblock %} alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">{% block header3 %}  Aunque no haya nada interesante... {% endblock %}</span>
+                            <span class="section-heading-lower">{% block header4 %}  Terrible header {% endblock %}</span>
+                        </h2>
+                        <p class="mb-3">{% block parrafo1 %} "ClanWebsite" provee absolutamente nada aunque usted es bienvenido/a a enviar petrodolares a xanderseling@gmail.com. Saludos  {% endblock %}</p>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">{% block visitbutton1 %} Donar guita {% endblock %}</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

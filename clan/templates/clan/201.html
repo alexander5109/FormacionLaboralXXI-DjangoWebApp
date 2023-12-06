@@ -1,0 +1,23 @@
+{% extends "clan\t1_error.html" %}
+{% load static %}
+
+
+
+
+{% block title %} CLAN: Exito {% endblock %}
+{% block header1 %} Codigo 201: Todo bien {% endblock %}
+{% block header2 %} Operacion exitosa! {% endblock %}
+{% block headerimage1 %} "{% static 'clan/assets/img/201.jpg' %}" {% endblock %}
+
+
+
+
+{% block header3 %} La base de datos ahora cuenta con... {% endblock %}
+{% block header4 %} {{posted_data.name}} {% endblock %}
+{% block parrafo1 %} <strong> {{posted_data}}</strong>  fue correctamente agregado a la base de datos de este sitio. {% endblock %}
+
+
+{% block return_message %} 		{{volver_message}} 		{% endblock %}
+{% block return_link %} 		{{volver_url}} 			{% endblock %}
+
+

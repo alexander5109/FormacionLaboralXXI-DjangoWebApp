@@ -1,0 +1,24 @@
+{% extends "clan\t1_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %} CLAN: BadRequest {% endblock %}
+{% block header1 %} Error de solicitud {% endblock %}
+{% block header2 %} Error 400 {% endblock %}
+{% block headerimage1 %} "{% static 'clan/assets/img/400.png' %}" {% endblock %}
+
+
+
+
+{% block header3 %} Tal vez te equivocaste, pero... {% endblock %}
+{% block header4 %} Hubo un error para procesar la petición solicitada. {% endblock %}
+{% block parrafo1 %} Lo mas probable es que sea un error interno.  {% endblock %}
+
+
+
+{% block visitbutton1 %}  {% endblock %}
+{% block header3_b %} A ver el error... {% endblock %}
+{% block header4_b %} Este es el error: {% endblock %}
+{% block parrafo1_b %} {{errors}} {% endblock %}

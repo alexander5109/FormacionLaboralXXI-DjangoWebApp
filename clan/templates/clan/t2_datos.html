@@ -1,0 +1,53 @@
+{% extends "clan/t0.html" %}
+{% load static %}
+
+
+{% block title %} CLAN: Analisis {% endblock %}
+{% block header1 %} Analisis {% endblock %}
+{% block header2 %} Analisis de Datos {% endblock %}
+
+
+
+{% block content %} 
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% block headerimage1 %} "{% static 'clan/assets/img/intro.jpg' %}" {% endblock %} alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">DATA</span>
+                            <span class="section-heading-lower">Analisis</span>
+                        </h2>
+                        <p class="mb-3"> 
+						
+						{% if form %}
+							<form action= {% block form_post_url %} "{% url 'clan:datos' %}" {% endblock %}/ method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+									{% for field in form %}
+										<li class="list-unstyled-item list-hours-item d-flex">
+											{{ field.label_tag }}
+											<span class="ms-auto"> 
+												{{ field }}
+											</span>
+										</li>
+									{% endfor %}
+								</ul>
+								<div class="intro-button mx-auto">
+									<button type="submit" class="btn btn-primary btn-xl" name="enviarlo"> {% block button_text %} Solicitar grafico {% endblock %} </button>
+								</div>
+							</form>
+						{% endif %}
+							
+						
+						</p>
+						
+						{% if grafico %}
+							<img src="data:image/png;base64,{{ grafico }}" alt="Seaborn Plot">
+						{% endif %}
+						
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

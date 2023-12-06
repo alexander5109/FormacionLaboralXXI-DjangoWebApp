@@ -1,0 +1,23 @@
+{% extends "clan\t1_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %} CLAN: PageNotFound {% endblock %}
+{% block header1 %} Pagina no encontrada {% endblock %}
+{% block header2 %} Error 404 {% endblock %}
+{% block headerimage1 %} "{% static 'clan/assets/img/404_2.jpg' %}" {% endblock %}
+
+
+
+
+{% block header3 %} Tal vez te equivocaste, pero... {% endblock %}
+{% block header4 %} La página no existe. {% endblock %}
+{% block parrafo1 %} La pagina solicitada no esta definida en el servidor.  {% endblock %}
+
+
+{% block visitbutton1 %}  {% endblock %}
+{% block header3_b %} A ver el error... {% endblock %}
+{% block header4_b %} Este es el error: {% endblock %}
+{% block parrafo1_b %} {{errors}} {% endblock %}

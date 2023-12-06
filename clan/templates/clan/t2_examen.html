@@ -1,0 +1,606 @@
+{% extends "clan/t0.html" %}
+{% load static %}
+
+{% block title %} CLAN: Examen {% endblock %}
+{% block header1 %} Pagina con metodo-POST {% endblock %}
+{% block header2 %} Examen {% endblock %}
+
+
+
+{% block content %} 
+    <script>
+        // Display a confirmation dialog when the user tries to leave the page
+        window.onbeforeunload = function () {
+            return "Estas usted segur@ de salir de esta pagina?";
+        };
+    </script>
+	
+
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-5">
+						<span class="section-heading-upper">Pensamiento Computacional</span>
+						<span class="section-heading-lower">Examen Final</span>
+					</h2>
+					<p class="address mb-5">
+						<em>
+							<strong>Estructura del exámen</strong>
+							<br/>
+							El examen se divide en 5 partes:
+							<br/>
+							<br/>
+							1. Expresiones lógicas (20/100 pts)
+							<br/>
+							2. Identificación de patrones (20/100 pts)
+							<br/>
+							3. Diagramas de flujo (20/100 pts)
+							<br/>
+							4. Conceptos de programación (20/100 pts)
+							<br/>
+							5. Programación práctica (20/100 pts)
+							<br/>
+							<br/>
+							Cada parte tiene en promedio tres consignas, sumando en total, quince.
+							<br/> El examen se aprueba con al menos 70 puntos.
+						</em>
+					</p>
+					<p class="mb-0">
+						<small><em>Por Alexander Seling; </em></small>
+						<br />
+						Suerte
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">Primera parte</span>
+						<span class="section-heading-lower">Expresiones lógicas</span>
+					</h2>
+					<p class="mb-0">     </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Primera parte</span>
+                        <span class="section-heading-lower">Consigna 1</span>
+                    </h2>
+					{{form.question_1.label_tag }}
+					{{form.question_1}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+						<div class="cta-inner bg-faded text-center rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Primera parte</span>
+							<span class="section-heading-lower">Consigna 2</span>
+						</h2>
+					{{form.question_2.label_tag }}
+					{{form.question_2}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Primera parte</span>
+                        <span class="section-heading-lower">Consigna 3</span>
+                    </h2>
+					{{form.question_3.label_tag }}
+					{{form.question_3}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+						<div class="cta-inner bg-faded text-center rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Primera parte</span>
+							<span class="section-heading-lower">Consigna 4</span>
+						</h2>
+					{{form.question_4.label_tag }}
+					{{form.question_4}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">Segunda parte</span>
+						<span class="section-heading-lower">Identificación de patrones</span>
+					</h2>
+					<p class="mb-0">     </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Segunda parte</span>
+                        <span class="section-heading-lower">Consigna 5</span>
+                    </h2>
+					{{form.question_5.label_tag }}
+					{{form.question_5}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+						<div class="cta-inner bg-faded text-center rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Segunda parte</span>
+							<span class="section-heading-lower">Consigna 6</span>
+						</h2>
+					{{form.question_6.label_tag }}
+					{{form.question_6}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Segunda parte</span>
+                        <span class="section-heading-lower">Consigna 7</span>
+                    </h2>
+					{{form.question_7.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question07.jpg' %}" alt="...">
+					{{form.question_7}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+						<div class="cta-inner bg-faded text-center rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Segunda parte</span>
+							<span class="section-heading-lower">Consigna 8</span>
+						</h2>
+					{{form.question_8.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question08.jpg' %}" alt="...">
+					{{form.question_8}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">Tercera parte</span>
+						<span class="section-heading-lower">Diagramas de flujo</span>
+					</h2>
+					<p class="mb-0"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+
+
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Tercera parte</span>
+                        <span class="section-heading-lower">Consigna 9</span>
+                    </h2>
+					{{form.question_9.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question09.png' %}" alt="...">
+					{{form.question_9}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+						<div class="cta-inner bg-faded text-center rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Tercera parte</span>
+							<span class="section-heading-lower">Consigna 10</span>
+						</h2>
+					{{form.question_10.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question10.png' %}" alt="...">
+					{{form.question_10}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- center -->
+<section class="page-section">
+    <div class="container">
+		<!-- <div class="col-xl-9 mx-auto"> -->	
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Tercera parte</span>
+                        <span class="section-heading-lower">Consigna 11</span>
+                    </h2>
+					{{form.question_11.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question11.png' %}" alt="...">
+					<br>
+					<h4>Y convertirlo en un diagrama de flujo. </h4> 
+					<h5>*Se puede realizar en la aplicacion 'draw.io' que tienen en la carpeta Pensamiento Computacional, y subirlo acá abajo. </h5> 
+					
+					{{form.question_11}}
+					<h5>O lo pueden hacer en una hoja a mano.</h5> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">Cuarta parte</span>
+						<span class="section-heading-lower">Conceptos de programación</span>
+					</h2>
+					<p class="mb-0"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Cuarta parte</span>
+                        <span class="section-heading-lower">Consigna 12</span>
+                    </h2>
+					<h3>Respecto al concepto de procedimiento...</h3>
+					<h4>Seleccione las afirmaciones que te parescan correctas </h4>
+					<br>
+					{{ form.question_12.as_ul }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+			<!-- <div class="col-xl-9 mx-auto"> -->
+          <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Cuarta parte</span>
+                        <span class="section-heading-lower">Consigna 13</span>
+                    </h2>
+					<h3>Respecto al concepto de repetición simple y repetición condicional..</h3>
+					<h4>Seleccione las afirmaciones que te parescan correctas </h4>
+					<br>
+					{{ form.question_13.as_ul }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<div class="cta-inner bg-faded text-center rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">Quinta parte</span>
+						<span class="section-heading-lower">Práctica de programación</span>
+					</h2>
+					<p class="mb-0"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+<!-- separator  -->
+
+
+
+<!-- left -->
+<section class="page-section">
+    <div class="container">
+        <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+                <div class="question-title text-center">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Quinta parte</span>
+                        <span class="section-heading-lower">Consigna 14</span>
+                    </h2>
+					{{form.question_14.label_tag }}
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question14.png' %}" alt="...">
+					<br>
+					{{form.question_14}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- right -->
+<section class="page-section">
+	<div class="container">
+		<div class="product-item">
+
+			<div class="product-item-description d-flex ms-auto">
+			<!-- centrado y mas ancho -->
+			<!-- <div class="col-xl-9 mx-auto"> -->	
+				<div class="bg-faded p-5 rounded">
+					<p class="mb-0">
+					<div class="question-title text-center">
+						<h2 class="section-heading mb-5">
+							<span class="section-heading-upper">Quinta parte</span>
+							<span class="section-heading-lower">Consigna 15</span>
+						</h2>
+					{{form.question_15.label_tag }}
+					{{form.question_15}}
+					<br> 
+					<br> 
+					<h4> Te animás a redactar el pseudo-codigo para tu forma de resolver el problema? </h4>
+					<br> 
+					<br> 
+					<h5> Acá comparto un ejemplo de como podrían escribir un procedimiento con parametros.</h5>
+					<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'clan/exam/question15.png' %}" alt="...">
+					<br> 
+					<br> 
+					{{form.question_15_extra.label_tag}}
+					{{form.question_15_extra}}
+				</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+                    <!-- <div class="intro-text left-0 text-center bg-faded p-5 rounded"> -->
+							<!-- <form action= {% block form_action %} {% url 'clan:examen' %} {% endblock %}/ method="POST"> -->
+								<!-- {% csrf_token %} -->
+
+								<!-- <div class="intro-button mx-auto"> -->
+									<!-- <button type="submit" class="btn btn-primary btn-xl" name="enviarlo">Enviar Examen</button> -->
+								<!-- </div> -->
+							<!-- </form> -->
+                    <!-- </div>		 -->
+							
+							
+							
+							
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}
+
+

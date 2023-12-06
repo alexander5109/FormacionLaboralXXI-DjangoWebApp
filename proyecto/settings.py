@@ -39,6 +39,7 @@ APPEND_SLASH = True
 
 INSTALLED_APPS = [
     'blog',	#Work in progress.
+    'clan',	#Work in progress.
     'aplicacion',
     'django.contrib.admin',
     'django.contrib.auth',

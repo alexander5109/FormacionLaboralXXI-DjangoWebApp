@@ -1,0 +1,55 @@
+{% extends "clan\t0.html" %}
+{% load static %}
+
+{% block title %} CLAN: Registro {% endblock %}
+{% block header1 %} Creacion de cuenta personal {% endblock %}
+{% block header2 %} Registración {% endblock %}
+
+
+
+{% block content %} 
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-upper">{% block header3 %} Cuando esto funcione.... {% endblock %}</span>
+                                <span class="section-heading-lower">{% block header4 %} Creacion de cuenta {% endblock %}</span>
+                            </h2>
+                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+							
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                   Nombre
+                                    <span class="ms-auto"> {rellene}</span>
+                                </li>
+								
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                     Apellido
+                                    <span class="ms-auto"> {rellene}</span>
+                                </li>
+								
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                     Correo electrónico
+                                    <span class="ms-auto"> {rellene}</span>
+                                </li>
+								
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                     Docente o Estudiante?
+                                    <span class="ms-auto"> {rellene}</span>
+                                </li>
+								
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                     Contraseña
+                                    <span class="ms-auto"> {rellene}</span>
+                                </li>
+								
+								
+                            </ul>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!"> Registrarse</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
