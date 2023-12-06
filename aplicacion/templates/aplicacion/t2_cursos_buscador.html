@@ -1,0 +1,75 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block title %}  Buscar {% endblock %}
+{% block header2 %} Busqueda de Cursos {% endblock %}
+
+{% block content %} 
+	<section class="page-section clearfix">
+		<div class="container">
+			<div class="intro">
+				<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}"  {% endblock %} alt="..." />
+				<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">{% block header3 %} Buscar curso {% endblock %}</span>
+						<span class="section-heading-lower">{% block header4 %} Buscar? {% endblock %}</span>
+					</h2>
+					<p class="mb-3">{% if true %} Busqueda de curso {% endif %} </p>
+					
+					<form method="get" action="{% url 'aplicacion:tables-buscar' 'cursos' %}">
+						<div class="form-group">
+							<label for="search">Buscar curso:</label>
+							<input type="text" id="search" name="search" class="form-control" placeholder= "Ingrese nombre o familia profesional...">
+						</div>
+						<div class="intro-button mx-auto">
+							<button type="submit" class="btn btn-primary btn-xl">{% block button_content_message %}Buscar curso{% endblock %}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% if item_buscado %} 
+	<section class="page-section cta">
+		{% if results %} 
+			{% for curso in results %}
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-9 mx-auto">
+							<div class="cta-inner bg-faded text-center rounded">
+								<h3 class="section-heading mb-4">
+									<span class="section-heading-upper"> Curso encontrado</span>
+									<!-- <span class="section-heading-lower"> {{ curso.name }}   </span> -->
+									<a href="{% url 'aplicacion:tables-read' 'cursos' curso.slug %}" class="section-heading-lower">{{ curso.name }}</a>
+								</h3>
+								<p class="mb-0">
+									<div class="bg-faded p-5 rounded">
+										<p class="mb-0"> <strong> Nombre: </strong>{{ curso.name }} </p>
+										<p class="mb-0"> <strong> Descripcion: </strong> {{ curso.descripcion }} </p>
+										<p class="mb-0"> <strong> Familia Profesional: </strong> {{ curso.familia_profesional }} </p>
+										<p class="mb-0"> <strong> Instituto que lo dicta: </strong> <a href="{% url 'aplicacion:centros-detail' curso.institucion.pk %}">{{curso.institucion}}</a></a> </p>
+									</div>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% else %} 
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						<div class="cta-inner bg-faded text-center rounded">
+							<h3 class="section-heading mb-4">
+								<span class="section-heading-upper"> Sin resultados para...</span>
+								<span class="section-heading-lower"> "{{item_buscado}}" </span>
+							</h3>
+							<p class="mb-0"> No se encontro ningun curso que mencione "{{item_buscado}}". Nótese que se le consultó a la base de datos cualquier curso nombre o familia profesional se asemeje al dato ingresado. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %} 
+	</section>
+	{% endif %} 
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "aplicacion/0001_formulario.html" %}
+
+{% block title %}  Editar {% endblock %}
+{% block header2 %} Editar {{instance.name}} {% endblock %}
+
+
+{% block header3 %} Editar un estudiante... {% endblock %}
+{% block header4 %} Modificar estudiante: {% endblock %}
+{% block button_text %} Editar estudiante {% endblock %}
+
+{% block form_post_url %} {% url 'aplicacion:tables-update' 'estudiantes' instance.slug %} {% endblock %}

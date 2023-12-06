@@ -1,0 +1,11 @@
+{% extends "aplicacion/0001_formulario.html" %}
+
+{% block title %}  Modificar {% endblock %}
+{% block header2 %} Editar {{instance.name}} {% endblock %}
+
+
+{% block header3 %} Editar un curso... {% endblock %}
+{% block header4 %} Formulario para Curso {% endblock %}
+{% block button_text %} Editar curso {% endblock %}
+
+{% block form_post_url %} "{% url 'aplicacion:tables-update' 'cursos' instance.slug %}" {% endblock %}

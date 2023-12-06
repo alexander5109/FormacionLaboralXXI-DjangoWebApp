@@ -1,0 +1,61 @@
+{% extends "aplicacion/0001_formulario.html" %}
+{% load static %}
+
+{% block title %}  Avatar {% endblock %}
+{% block header2 %} Cambiar avatar {% endblock %}
+
+
+{% block content %} 
+		<section class="page-section cta">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						<div class="cta-inner bg-faded text-center rounded">
+							<h2 class="section-heading mb-5">
+								<span class="section-heading-upper">{% block header3 %} Avatar {% endblock %}</span>
+								<span class="section-heading-lower">{% block header4 %} Cambiar avatar {% endblock %}</span>
+							</h2>
+							
+
+							<form action='' method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								{% if form.errors %}
+									<div class="alert alert-danger">
+										<strong>Algo no anduvo bien.</strong>
+										<ul>
+										{% for field_name, errors in form.errors.items %}
+											{% for field in form %}
+												{% if field.name == field_name %}
+													{% for error in errors %}
+														<li> <strong>{{ field.label_tag }}</strong> <em>{{ error }}</em></li>
+													{% endfor %}
+												{% endif %}
+											{% endfor %}
+										{% endfor %}
+										</ul>
+									</div>
+								{% endif %}
+								
+								<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+									{% for field in form %}
+										<li class="list-unstyled-item list-hours-item d-flex">
+											{{ field.label_tag }}
+											<span class="ms-auto"> 
+												{{ field }}
+											</span>
+										</li>
+									{% endfor %}
+								</ul>
+								
+								<div class="intro-button mx-auto">
+									<button type="submit" class="btn btn-primary btn-xl" > Actualizar avatar</button>
+								</div>
+							</form>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}

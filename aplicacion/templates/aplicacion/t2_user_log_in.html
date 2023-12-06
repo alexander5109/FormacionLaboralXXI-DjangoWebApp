@@ -1,0 +1,67 @@
+{% extends "aplicacion/0001_formulario.html" %}
+{% load static %}
+
+{% block title %}  Iniciar {% endblock %}
+{% block header2 %} Inicia sesión {% endblock %}
+
+{% block content %} 
+		<section class="page-section cta">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						<div class="cta-inner bg-faded text-center rounded">
+							<h2 class="section-heading mb-5">
+								<span class="section-heading-upper">{% block header3 %}Iniciar sesión {% endblock %}</span>
+								<span class="section-heading-lower">{% block header4 %} LOGIN {% endblock %}</span>
+							</h2>
+							
+							
+							
+							<form action="" method="post">
+								{% csrf_token %}
+								{{ form.as_p }}
+								<div class="intro-button mx-auto">
+									<button type="submit" class="btn btn-primary btn-xl"> Iniciar sesión </button>
+								</div>
+							</form>
+										
+
+							<!-- {% if next %} -->
+								<!-- {% if user.is_authenticated %} -->
+									<!-- <p>Tu cuenta no tiene acceso a esta página. Para acceder, inicia sesión con una cuenta que tenga acceso.</p> -->
+								<!-- {% else %} -->
+									<!-- <p>Por favor inicia sesión para ver esta página.</p> -->
+								<!-- {% endif %} -->
+							<!-- {% endif %} -->
+							
+																		
+							<!-- {% if form.errors %} -->
+								<!-- <div class="alert alert-danger"> -->
+									<!-- {{ form.errors }} -->
+								<!-- </div> -->
+							<!-- {% endif %} -->
+							
+							
+							<!-- <form action="" method="post"> -->
+								<!-- {% csrf_token %} -->
+								<!-- <ul class="list-unstyled list-hours mb-5 text-left mx-auto"> -->
+									<!-- {% for field in form %} -->
+										<!-- <li class="list-unstyled-item list-hours-item d-flex"> -->
+											<!-- {{ field.label_tag }} -->
+											<!-- <span class="ms-auto">  -->
+												<!-- {{ field }} -->
+											<!-- </span> -->
+										<!-- </li> -->
+									<!-- {% endfor %} -->
+								<!-- </ul> -->
+								<!-- <div class="intro-button mx-auto"> -->
+									<!-- <button type="submit" class="btn btn-primary btn-xl"> {% block button_text %}Iniciar sesión{% endblock %} </button> -->
+								<!-- </div> -->
+							<!-- </form> -->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}

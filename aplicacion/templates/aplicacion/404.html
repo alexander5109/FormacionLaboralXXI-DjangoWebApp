@@ -1,0 +1,53 @@
+{% extends "aplicacion/0001_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  PageNotFound {% endblock %}
+{% block header2 %} Error: Codigo 404 {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/goats/404.jpg' %}" {% endblock %}
+
+
+
+{% block header3 %} 
+	{% if failure_header_1 %} 
+		{{failure_header_1|safe}}
+	{% else %} 
+		Tal vez te equivocaste, pero...
+	{% endif %}
+{% endblock %}
+
+
+{% block header4 %} 
+	{% if failure_header_2 %} 
+		{{failure_header_2|safe}}
+	{% else %} 
+		La página no existe.
+	{% endif %}
+{% endblock %}
+
+{% block parrafo1 %} 
+	{% if failure_message %} 
+		{{failure_message}} 
+	{% else %} 
+		La página solicitada no parece estar definida en el servidor.
+	{% endif %}
+{% endblock %}
+
+
+{% block button_content_message %} 		
+	{% if button_msg %} 
+		{{button_msg}} 
+	{% else %} 
+		Volver a la Home
+	{% endif %}
+{% endblock %}
+
+{% block button_block_url %}
+	{% if button_url %} 
+		{{button_url}} 
+	{% else %} 
+		{% url 'aplicacion:home' %}
+	{% endif %}
+{% endblock %}

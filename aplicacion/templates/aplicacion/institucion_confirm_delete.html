@@ -1,0 +1,36 @@
+{% extends "aplicacion/0001_about.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  Institucion {{estudiante.name}} {% endblock %}
+{% block header2 %} Confirmar Eliminación{% endblock %}
+
+
+
+{% block header3 %} Datos de Institucion... {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}" {% endblock %}
+{% block header4 %} {{institucion.name}} de {{institucion.partido}} {% endblock %}
+
+{% block parrafo1 %} {% endblock %}
+
+
+{% block parrafo2 %} 
+		<h2 class="section-heading mb-4">
+			<br>
+			<span class="section-heading-upper">Confirmar eliminación</span>
+		</h2>
+		<p>Estás seguro de borrar a {{ institucion.name }}. Esta acción es irrevertible... a menos que haya un backup en GitHub</p>
+		<form method="post" action="{% url 'aplicacion:centros-delete' institucion.pk %}">
+			{% csrf_token %}
+			<div class="intro-button mx-auto">
+				<button type="submit" class="btn btn-primary btn-x3">Confirmar Eliminacion {{ institucion.name }}</button>
+			</div>
+		</form>
+	<br>
+	<div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'aplicacion:centros-list' %}">Volver al listado de instituciones</a>
+	</div>  
+{% endblock %}
+
+

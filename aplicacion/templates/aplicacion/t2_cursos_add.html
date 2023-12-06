@@ -1,0 +1,11 @@
+{% extends "aplicacion/0001_formulario.html" %}
+
+{% block title %}  Agregar Curso {% endblock %}
+{% block header2 %} Agregar Curso {% endblock %}
+
+
+{% block header3 %} Agregar un curso... {% endblock %}
+{% block header4 %} Formulario para Curso {% endblock %}
+{% block button_text %} Agregar curso {% endblock %}
+
+{% block form_post_url %} {% url 'aplicacion:tables-create' 'cursos' %} {% endblock %}

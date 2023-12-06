@@ -1,0 +1,39 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block title %}  Agregar {% endblock %}
+{% block header2 %} Agregar estudiante a {{ instance }} {% endblock %}
+
+
+{% block content %} 
+		<section class="page-section cta">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						<div class="cta-inner bg-faded text-center rounded">
+							<h2 class="section-heading mb-5">
+								<span class="section-heading-upper">{% block header3 %} {{ instance }} {% endblock %}</span>
+								<span class="section-heading-lower">{% block header4 %} Formulario de inscripcion {% endblock %}</span>
+							</h2>
+							<form action= {% block form_post_url %} {% url 'aplicacion:tables-create' 'estudiantes' %} {% endblock %}/ method="POST">
+								{% csrf_token %}
+								<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+									{% for field in form %}
+										<li class="list-unstyled-item list-hours-item d-flex">
+											{{ field.label_tag }}
+											<span class="ms-auto"> 
+												{{ field }}
+											</span>
+										</li>
+									{% endfor %}
+								</ul>
+								<div class="intro-button mx-auto">
+									<button type="submit" class="btn btn-primary btn-xl" name="enviarlo"> {% block button_text %} Agregar estudiante {% endblock %} </button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}

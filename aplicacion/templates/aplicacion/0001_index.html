@@ -1,0 +1,20 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block content %} 
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% block headerimage1 %} {% endblock %} alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">{% block header3 %} {% endblock %}</span>
+                            <span class="section-heading-lower">{% block header4 %} {% endblock %}</span>
+                        </h2>
+                        <p class="mb-3">{% block parrafo1 %} {% endblock %}</p>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href={% block button_block_url %} {% endblock %}>{% block button_content_message %} {% endblock %}</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "aplicacion/0001_formulario.html" %}
+
+{% block title %}  Agregar {% endblock %}
+{% block header2 %} Agregar Estudiante {% endblock %}
+
+
+{% block header3 %} Formulario de inscripcion... {% endblock %}
+{% block header4 %} Agregar estudiante {% endblock %}
+{% block button_text %} Agregar estudiante {% endblock %}
+
+{% block form_post_url %} {% url 'aplicacion:tables-create' 'estudiantes' %} {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "aplicacion/0001_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  Home {% endblock %}
+{% block header2 %} Welcome {{user.username}} {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/intro.jpg' %}" {% endblock %}
+
+
+
+{% block header3 %} 
+	BIENVENIDO
+{% endblock %}
+
+{% block header4 %} 
+	{% if not request.user.is_authenticated %}
+		Invitado
+	{% else %}
+		{{user.username}}
+	{% endif %}
+{% endblock %}
+
+
+{% block parrafo1 %} "MyPseudoWebsite" provee absolutamente nada aunque usted es bienvenido/a a enviar petrodolares a xanderseling@gmail.com. Saludos  {% endblock %}
+{% block button_content_message %} Donar guita {% endblock %}
+{% block button_block_url %} https://www.paypal.com/paypalme/ecth5109 {% endblock %}
+
+
+
+
+{% block header3_b %} Otro cuadrito de texto canchero {% endblock %}
+{% block header4_b %} Otro terrible header{% endblock %}
+{% block parrafo1_b %} Este es un parrafo con informacion relevante que nisiquiera viene de un archivo html común. Son puro bloques del lenguaje para templates de Django. Extraordinario. {% endblock %}

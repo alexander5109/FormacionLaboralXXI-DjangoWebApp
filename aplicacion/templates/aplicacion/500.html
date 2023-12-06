@@ -1,0 +1,53 @@
+{% extends "aplicacion/0001_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  PageNotFound {% endblock %}
+{% block header2 %} Error: Codigo 500 {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/goats/500.jpg' %}" {% endblock %}
+
+
+
+{% block header3 %} 
+	{% if failure_header_1 %} 
+		{{failure_header_1|safe}}
+	{% else %} 
+		Seguramente me equivoque yo, pero...
+	{% endif %}
+{% endblock %}
+
+
+{% block header4 %} 
+	{% if failure_header_2 %} 
+		{{failure_header_2|safe}}
+	{% else %} 
+		Esta página no funciona.
+	{% endif %}
+{% endblock %}
+
+{% block parrafo1 %} 
+	{% if success_message %} 
+		{{success_message}} 
+	{% else %} 
+		Error en el server. No se pudo completar la solicitud de la pagina.
+	{% endif %}
+{% endblock %}
+
+
+{% block button_content_message %} 		
+	{% if failure_message %} 
+		{{failure_message}} 
+	{% else %} 
+		Volver a la Home
+	{% endif %}
+{% endblock %}
+
+{% block button_block_url %}
+	{% if button_url %} 
+		{{button_url}} 
+	{% else %} 
+		{% url 'aplicacion:home' %}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "aplicacion/0001_about.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  {{estudiante.name}} {% endblock %}
+{% block header2 %} Datos de {{estudiante.name}} {% endblock %}
+
+
+
+{% block header3 %} Datos de Alumno... {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}" {% endblock %}
+{% block header4 %} {{estudiante.name}} {{estudiante.lastname}} {% endblock %}
+
+{% block parrafo1 %} 
+	{% if not confirm_deletion %}
+		<p><strong></strong>
+		{{estudiante.name}} nacio en {{estudiante.nacimiento}}, por lo tanto tiene <strong>{{estudiante.age}}</strong> años.</p>
+		
+			{% for curso in estudiante.related_cursos %}
+				<p class="mb-0"> <strong>Cursa:</strong> <a href="{% url 'aplicacion:tables-read' 'cursos' curso.slug %}">{{curso}}</a> en {{curso.institucion}} en {{curso.institucion.partido}} en {{curso.institucion.partido.provincia}}</p>
+			{% empty %}
+				<strong> <p class="mb-0"> <strong>Cursa:</strong> No cursa nada </p> </strong> </br>
+			{% endfor %}
+		<p> Fue agregado en la fecha <strong>{{estudiante.created}} </p>
+		<p> Su correo electronico es: {{estudiante.email}}
+		</p>
+	{% endif %}
+{% endblock %}
+
+
+{% block parrafo2 %} 
+	{% if confirm_deletion %}
+		<h2 class="section-heading mb-4">
+			<br>
+			<span class="section-heading-upper">Confirmar eliminación</span>
+		</h2>
+		<p>Estás seguro de borrar a {{ estudiante.name }}. Esta acción es irrevertible... a menos que haya un backup en GitHub</p>
+		<form method="post" action="{% url 'aplicacion:tables-delete' 'estudiantes' estudiante.slug %}">
+			{% csrf_token %}
+			<div class="intro-button mx-auto">
+				<button type="submit" class="btn btn-primary btn-x3">Confirmar Eliminacion del estudiante << {{estudiante.name}} {{estudiante.lastname}}>> </button>
+			</div>
+		</form>
+	{% endif %}
+	
+	{% if request.user.is_authenticated and not confirm_deletion %} 
+		<div class="intro-button mx-auto">
+		<a class="btn btn-primary btn-x3" href="{% url 'aplicacion:tables-delete' 'estudiantes' estudiante.slug %}">Delete {{ estudiante.name }}</a>
+		</div>
+		<br>
+		<div class="intro-button mx-auto"><a class="btn btn-primary btn-x4" href= "{% url 'aplicacion:tables-update' 'estudiantes' estudiante.slug %}"> Update {{estudiante.name}}</a>
+		</div>  
+	{% endif %}
+	<br>
+	
+	
+	<div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'aplicacion:tables-listado' 'estudiantes' %}">Volver al listado de estudiantes</a>
+	</div>  
+{% endblock %}
+
+

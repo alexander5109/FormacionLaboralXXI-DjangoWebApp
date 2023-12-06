@@ -1,0 +1,67 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <!-- <div class="bg-faded p-5 d-flex ms-auto rounded"> -->
+                            <!-- <h2 class="section-heading mb-1"> -->
+                                <!-- <span class="section-heading-upper">{% block header3 %} {% endblock %}</span> -->
+                                <!-- <span class="section-heading-lower">{% block header4 %} {% endblock %}</span> -->
+                            <!-- </h2> -->
+                        <!-- </div> -->
+						
+                    </div>
+                    <!-- <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% block header4_image %} {% endblock %}" alt="..." /> -->
+                    <div class="product-item-description d-flex me-auto">
+						<div class="intro-button mx-auto"><a class="btn btn-primary btn-x2" href={% block add_button_link_1 %} {% endblock %}>{% block add_button_name_1 %}{% endblock %}</a></div> 
+						<br></br>
+						<br></br>
+						<div class="intro-button mx-auto"><a class="btn btn-primary btn-x2" href={% block add_button_link_2 %} {% endblock %}>{% block add_button_name_2 %} {% endblock %}</a></div> 
+						<br></br>
+						<br></br>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">{% block parrafo1 %} {% endblock %}</p></div>
+						
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="page-section"> -->
+            <!-- <div class="container"> -->
+                <!-- <div class="product-item"> -->
+                    <!-- <div class="product-item-title d-flex"> -->
+                        <!-- <div class="bg-faded p-5 d-flex me-auto rounded"> -->
+                            <!-- <h2 class="section-heading mb-0"> -->
+                                <!-- <span class="section-heading-upper">{% block header3_b %} {% endblock %}</span> -->
+                                <!-- <span class="section-heading-lower">{% block header4_b %} {% endblock %}</span> -->
+                            <!-- </h2> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% block header4_image_b %} {% endblock %}" alt="..." /> -->
+                    <!-- <div class="product-item-description d-flex ms-auto"> -->
+                        <!-- <div class="bg-faded p-5 rounded"><p class="mb-0">{% block parrafo1_b %} {% endblock %}</p></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+        <!-- <section class="page-section"> -->
+            <!-- <div class="container"> -->
+                <!-- <div class="product-item"> -->
+                    <!-- <div class="product-item-title d-flex"> -->
+                        <!-- <div class="bg-faded p-5 d-flex ms-auto rounded"> -->
+                            <!-- <h2 class="section-heading mb-0"> -->
+                                <!-- <span class="section-heading-upper">{% block header3_c %} {% endblock %}</span> -->
+                                <!-- <span class="section-heading-lower">{% block header4_c %} {% endblock %}</span> -->
+                            <!-- </h2> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% block header4_image_c %} {% endblock %}" alt="..." /> -->
+                    <!-- <div class="product-item-description d-flex me-auto"> -->
+                        <!-- <div class="bg-faded p-5 rounded"><p class="mb-0">{% block parrafo1_c %} {% endblock %}</p></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "aplicacion/0001_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  LogOut {% endblock %}
+{% block header2 %} Te has desconectado {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/logout.jfif' %}" {% endblock %}
+
+
+
+
+{% block header3 %} Has desconectado tu cuenta {% endblock %}
+{% block header4 %} Log Out {% endblock %}
+
+{% block parrafo1 %} Ahora ningun otro usuario podra ver tus cosas personales desde este navegador... a no ser que seas tan bruto de guardar tus contraseñas en una computadora ajena. Saludos {% endblock %}
+
+
+{% block button_content_message %} Volver a la Home {% endblock %}
+
+{% block button_block_url %} {% url 'aplicacion:home' %} {% endblock %}
+
+

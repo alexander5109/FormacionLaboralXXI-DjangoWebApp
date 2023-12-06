@@ -1,0 +1,8 @@
+*.pyc
+*.lnk
+desktop.ini
+/venv
+/venvFULL
+/aplicacion/templates/startbootstrap-business-frontpage-gh-pages
+/aplicacion/templates/startbootstrap-business-casual-gh-pages
+/aplicacion/templates/startbootstrap-landing-page-gh-pages

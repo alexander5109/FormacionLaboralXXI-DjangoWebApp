@@ -1,0 +1,85 @@
+{% extends "aplicacion/0001_about.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  {{curso.name}} {% endblock %}
+{% block header2 %} {{curso.name}} {% endblock %}
+
+
+
+{% block header3 %} Informacion de Curso... {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}" {% endblock %}
+{% block header4 %} {{curso.name}} {{curso.lastname}} {% endblock %}
+
+{% block parrafo1 %} 
+	{% if not confirm_deletion %}
+	<p class="address mb-5">
+		<em><strong> Presentación: </strong></em></p> 
+			<p> Pertenieciente a la familia profesional de  <strong>"{{curso.familia_profesional}}</strong>: </p> 
+			<p> </em>{{curso.descripcion}} <em>
+			<p> Dictado por 
+				<strong><a href="{% url 'aplicacion:centros-detail' curso.institucion.pk %}">{{curso.institucion}}</a></strong>
+	</p>
+	<!-- <p class="address mb-5"> -->
+		<!-- <em><strong> Horarios de cursada: </strong></em></p>  -->
+	<!-- <ul class="list-unstyled list-hours mb-5 text-left mx-auto"> -->
+		<!-- <li class="list-unstyled-item list-hours-item d-flex"> -->
+											<!-- Lunes  -->
+			<!-- <span class="ms-auto"> De 18:00 hs a 20:00 hs. </span> -->
+		<!-- </li> -->
+		<!-- <li class="list-unstyled-item list-hours-item d-flex"> -->
+										<!-- Miercoles  -->
+			<!-- <span class="ms-auto"> De 18:00 hs a 20:00 hs.</span> -->
+		<!-- </li> -->
+	<!-- </ul> -->
+	<!-- </p> -->
+	<p class="address mb-5">
+		<em><strong> Alumnos: </strong></em></p> 
+			<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+				{% for estudiante in curso.related_estudiantes %}
+				<li class="list-unstyled-item list-hours-item d-flex">
+					<!-- <small>{{alumno.name}} {{alumno.lastname}}</small> -->
+					<small><a href={% url 'aplicacion:tables-read' 'estudiantes' estudiante.slug %}><strong>{{estudiante.name}} {{estudiante.lastname}} </a></strong> </small>
+					
+				</li>
+				{% endfor %}
+				{% comment %}<a class="btn btn-primary btn-x3" href={% url 'aplicacion:tables-update' curso.slug %}>Sumar alumno</a> {% endcomment %}
+			</ul>
+	</p>
+	{% endif %}
+{% endblock %}
+
+{% block parrafo2 %} 
+	{% if confirm_deletion %}
+		<h2 class="section-heading mb-4">
+			<br>
+			<span class="section-heading-upper">Confirmar eliminación</span>
+		</h2>
+		<p>Estás seguro de borrar el curso de {{ curso.name }}. Esta acción es irrevertible... a menos que haya un backup en GitHub</p>
+		<form method="post" action="{% url 'aplicacion:tables-delete' 'cursos' curso.slug %}">
+			{% csrf_token %}
+			<div class="intro-button mx-auto">
+				<button type="submit" class="btn btn-primary btn-x3">Confirmar Eliminación del curso de << {{ curso.name }} >> </button>
+			</div>
+		</form>
+	{% endif %}
+	
+	{% if request.user.is_authenticated and not confirm_deletion %} 
+		<div class="intro-button mx-auto">
+		<a class="btn btn-primary btn-x3" href="{% url 'aplicacion:tables-delete' 'cursos' curso.slug %}">Eliminar {{ curso.name }}</a>
+		</div>
+		<br>
+		<div class="intro-button mx-auto"><a class="btn btn-primary btn-x4" href= "{% url 'aplicacion:tables-update' 'cursos' curso.slug %}"> Modificar {{curso.name}}</a>
+		</div>  
+		</div>  
+	{% endif %}
+	<br>
+	
+	<div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'aplicacion:tables-listado' 'cursos' %}">Volver a listado de cursos</a>
+	</div>  
+
+{% endblock %}
+
+

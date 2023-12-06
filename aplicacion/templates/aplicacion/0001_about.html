@@ -1,0 +1,28 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block content %} 
+<section class="page-section about-heading">
+	<div class="container">
+		<img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={% block headerimage1 %} {% endblock %} alt="..." />
+		<div class="about-heading-content">
+			<div class="row">
+				<div class="col-xl-9 col-lg-10 mx-auto">
+					<div class="bg-faded rounded p-5">
+						<h2 class="section-heading mb-4">
+							<span class="section-heading-upper">{% block header3 %} {% endblock %}</span>
+							<span class="section-heading-lower">{% block header4 %} {% endblock %}</span>
+						</h2>
+						<p>
+							{% block parrafo1 %} {% endblock %}
+						</p>
+						<p class="mb-0">
+							{% block parrafo2 %} {% endblock %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "aplicacion/0001_products.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  Cursos {% endblock %}
+{% block header2 %} Listado de Cursos {% endblock %}
+
+
+
+
+
+{% block header3 %} Aca hay datos de {% endblock %}
+{% block header4 %} Cursos{% endblock %}
+{% block header4_image %} {% static 'aplicacion/assets/img/products01.jpg' %} {% endblock %}
+{% block parrafo1 %}
+    <ul>
+    {% for curso in cursos %}
+        <li>
+			<h7> <a href={% url 'aplicacion:tables-read' 'cursos' curso.slug %}> <strong>{{curso.name}}  </a></strong> </h7>
+			<!-- ({{curso.familia_profesional}}) -->
+			<!-- <p> ({{estudiante.curso.name}}) </p>  -->
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
+{% block add_button_link_1 %} {% url 'aplicacion:tables-create' 'cursos' %} {% endblock %}
+{% block add_button_name_1 %} Agregar un curso {% endblock %}
+
+
+{% block add_button_link_2 %} {% url 'aplicacion:tables-buscador' 'cursos' %}  {% endblock %}
+{% block add_button_name_2 %} Buscar un curso {% endblock %}
+
+
+
+
+{% block header3_b %} Esto es un titulo en negrita {% endblock %}
+{% block header4_b %} Y este no {% endblock %}
+{% block header4_image_b %} {% static 'aplicacion/assets/img/products02.jpg' %} {% endblock %}
+{% block parrafo1_b %} Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. {% endblock %}
+
+
+
+
+{% block header3_c %} Esto es otro titulo en negrita {% endblock %}
+{% block header4_c %} Y este tampoco!{% endblock %}
+{% block header4_image_c %} {% static 'aplicacion/assets/img/products03.jpg' %} {% endblock %}
+{% block parrafo1_c %} Este es otro parrafo. Este es otro parrafo.  Este es otro parrafo {% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends "aplicacion/0001_index.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  Exito {% endblock %}
+{% block header2 %} Exito: Codigo 201 {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/goats/201.jpg' %}" {% endblock %}
+
+
+
+{% block header3 %} 
+	{% if success_header_1 %} 
+		{{success_header_1|safe}}
+	{% else %} 
+		La base de datos fue actualizada... 
+	{% endif %}
+{% endblock %}
+
+
+{% block header4 %} 
+	{% if success_header_2 %} 
+		{{success_header_2|safe}}
+	{% else %} 
+		Operación exitosa!
+	{% endif %}
+{% endblock %}
+
+{% block parrafo1 %} 
+	{% if success_message %} 
+		{{success_message|safe}}
+	{% else %} 
+		Datos guardados correctamente.
+	{% endif %}
+{% endblock %}
+
+
+{% block button_content_message %} 		
+	{% if button_msg %} 
+		{{button_msg}} 
+	{% else %} 
+		Volver a la Home
+		{% comment %} Volver {% endcomment %}
+	{% endif %}
+{% endblock %}
+
+{% block button_block_url %}
+	{% if button_url %} 
+		{{button_url}} 
+	{% else %} 
+		{% url 'aplicacion:home' %}
+		{% comment %} "../" {% endcomment %}
+	{% endif %}
+{% endblock %}
+
+

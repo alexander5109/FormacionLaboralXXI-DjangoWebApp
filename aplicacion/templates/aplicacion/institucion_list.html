@@ -1,0 +1,51 @@
+{% extends "aplicacion/0001_products.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  Instituciones {% endblock %}
+{% block header2 %} Listado de Instituciones {% endblock %}
+
+
+
+
+
+{% block header3 %} Aca hay datos de {% endblock %}
+{% block header4 %} Instituciones{% endblock %}
+{% block header4_image %} {% static 'aplicacion/assets/img/products01.jpg' %} {% endblock %}
+{% block parrafo1 %}
+    <ul>
+    {% for institucion in institucion_list %}
+        <li>
+			<h7> <a href={% url 'aplicacion:centros-detail' institucion.pk %}> <strong>{{institucion}}  </a></strong> </h7>
+			<h7>  <em>{{institucion.partido}}  </em> </h7>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
+{% block add_button_link_1 %} {% url 'aplicacion:centros-create' %} {% endblock %}
+{% block add_button_name_1 %} Agregar un CFL {% endblock %}
+
+
+{% block add_button_link_2 %} {% url 'aplicacion:home' %}  {% endblock %}
+{% block add_button_name_2 %} Volver a Home {% endblock %}
+
+
+
+
+{% block header3_b %} Esto es un titulo en negrita {% endblock %}
+{% block header4_b %} Y este no {% endblock %}
+{% block header4_image_b %} {% static 'aplicacion/assets/img/products02.jpg' %} {% endblock %}
+{% block parrafo1_b %} Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. Este es un parrafo. {% endblock %}
+
+
+
+
+{% block header3_c %} Esto es otro titulo en negrita {% endblock %}
+{% block header4_c %} Y este tampoco!{% endblock %}
+{% block header4_image_c %} {% static 'aplicacion/assets/img/products03.jpg' %} {% endblock %}
+{% block parrafo1_c %} Este es otro parrafo. Este es otro parrafo.  Este es otro parrafo {% endblock %}
+

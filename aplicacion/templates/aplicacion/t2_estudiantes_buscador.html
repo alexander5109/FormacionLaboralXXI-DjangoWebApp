@@ -1,0 +1,82 @@
+{% extends "aplicacion/0000_master.html" %}
+{% load static %}
+
+{% block title %}  Buscar {% endblock %}
+{% block header2 %} Busqueda de Estudiantes {% endblock %}
+
+{% block content %} 
+	<section class="page-section clearfix">
+		<div class="container">
+			<div class="intro">
+				<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}"  {% endblock %} alt="..." />
+				<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+					<h2 class="section-heading mb-4">
+						<span class="section-heading-upper">{% block header3 %} Buscar estudiante {% endblock %}</span>
+						<span class="section-heading-lower">{% block header4 %} Buscar? {% endblock %}</span>
+					</h2>
+					<p class="mb-3">{% if true %} Buqueda de guachin {% endif %} </p>
+					
+					
+					<form method="get" action="{% url 'aplicacion:tables-buscar' 'estudiantes' %}">
+						<div class="form-group">
+							<label for="search">Buscar guachin:</label>
+							<input type="text" id="search" name="search" class="form-control" placeholder= "Ingrese un nombre o apellido...">
+						</div>
+						<div class="intro-button mx-auto">
+							<button type="submit" class="btn btn-primary btn-xl">{% block button_content_message %}Buscar guachin{% endblock %}</button>
+						</div>
+					</form>
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	{% if item_buscado %} 
+	<section class="page-section cta">
+		{% if results %} 
+			{% for estudiante in results %}
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-9 mx-auto">
+							<div class="cta-inner bg-faded text-center rounded">
+								<h3 class="section-heading mb-4">
+									<span class="section-heading-upper"> Estudiante encontrado</span>
+									<span class="section-heading-lower"> <a href="{% url 'aplicacion:tables-read' 'estudiantes' estudiante.slug %}"> {{ estudiante.name }} </a>  </span>
+								</h3>
+								<p class="mb-0">
+									<div class="bg-faded p-5 rounded">
+										<p class="mb-0"> <strong>Nombre:</strong> {{ estudiante.name }} </p>
+										<p class="mb-0"> <strong>Apellido:</strong> {{ estudiante.lastname }}</p>
+										<p class="mb-0"> <strong>Edad:</strong> {{ estudiante.age }} </p>
+										{% for curso in estudiante.related_cursos %}
+											<p class="mb-0"> <strong>Cursa:</strong> <a href="{% url 'aplicacion:tables-read' 'cursos' curso.slug %}">{{curso}}</a> en {{curso.institucion}} en {{curso.institucion.partido}} en {{curso.institucion.partido.provincia}}</p>
+										{% empty %}
+											<p class="mb-0"> <strong>Cursa:</strong> No cursa nada </p>
+										{% endfor %}
+										<p class="mb-0"> <strong>Correo:</strong> {{ estudiante.email }} </p>
+									</div>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% else %} 
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						<div class="cta-inner bg-faded text-center rounded">
+							<h3 class="section-heading mb-4">
+								<span class="section-heading-upper"> Sin resultados para...</span>
+								<span class="section-heading-lower"> "{{item_buscado}}" </span>
+							</h3>
+							<p class="mb-0"> No se encontro ningun estudiante llamado "{{item_buscado}}". Nótese que se le consultó a la base de datos cualquier estudiante cuyo nombre o apellido se asemeje al dato ingresado. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %} 
+	</section>
+	{% endif %} 
+{% endblock %}

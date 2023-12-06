@@ -1,0 +1,55 @@
+{% extends "aplicacion/0001_about.html" %}
+{% load static %}
+
+
+
+
+{% block title %}  {{institucion.name}} {% endblock %}
+{% block header2 %} {{institucion.name}} {% endblock %}
+
+
+
+{% block header3 %} Datos de Institucion... {% endblock %}
+{% block headerimage1 %} "{% static 'aplicacion/assets/img/about.jpg' %}" {% endblock %}
+{% block header4 %} {{institucion.name}} de {{institucion.partido}} {% endblock %}
+
+{% block parrafo1 %} 
+	{% if not confirm_deletion %}
+	<p class="address mb-5">
+		<em><strong> Presentación: </strong></em></p> 
+			<p> <strong>"{{institucion.name}}</strong>: </p> 
+			<p> </em>{{institucion.descripcion}} <em>
+			<p> Dictado en <strong>{{institucion.partido}}</strong>
+	</p>
+	<p class="address mb-5">
+		<em><strong> Cursos que dicta: </strong></em></p> 
+			<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+				{% for curso in institucion.cursos %}
+				<li class="list-unstyled-item list-hours-item d-flex">
+					<!-- <small>{{alumno.name}} {{alumno.lastname}}</small> -->
+					<small><a href={% url 'aplicacion:tables-read' 'cursos' curso.slug %}><strong>{{curso}} </a></strong> </small>
+					
+				</li>
+				{% endfor %}
+			</ul>
+	</p>
+	{% endif %}
+{% endblock %}
+
+
+{% block parrafo2 %} 
+	{% if request.user.is_authenticated %} 
+		<div class="intro-button mx-auto">
+		<a class="btn btn-primary btn-x3" href="{% url 'aplicacion:centros-delete'  institucion.pk %}">Delete {{ institucion.name }}</a>
+		</div>
+		<br>
+		<div class="intro-button mx-auto"><a class="btn btn-primary btn-x4" href= "{% url 'aplicacion:centros-update' institucion.pk %}"> Update {{institucion.name}}</a>
+		</div>  
+	{% endif %}
+	<br>
+	
+	<div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'aplicacion:centros-list' %}">Volver al listado de instituciones</a>
+	</div>  
+{% endblock %}
+
+
