@@ -15,15 +15,15 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
-
+# print(BASE_DIR)
+CSRF_TRUSTED_ORIGINS = ['https://formacionlaboralxxi-djangowebapp.onrender.com']
 # AUTH_USER_MODEL = 'aplicacion.usuario'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0^ka(z504q4$a3svnz%(jtbi(b0@qp7uuk0#qpbb+t^r_rh*)b'
+# SECRET_KEY = 123
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
