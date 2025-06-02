@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-# import os
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-0^ka(z504q4$a3svnz%(jtbi(b0@qp7uuk0#qpbb+t^r_rh*)b
 # DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+# ALLOWED_HOSTS = ["127.0.0.1"]import os
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 APPEND_SLASH = True
 
 # MEDIA_URL = "/media"
